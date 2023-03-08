@@ -1,11 +1,12 @@
-import { useState } from 'react'
+import { ThemeProvider } from 'styled-components'
+import { theme } from './themes'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App">
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className="App">
+      </div>
+    </ThemeProvider>
   )
 }
 
