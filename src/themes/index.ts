@@ -3,7 +3,8 @@ import 'styled-components'
 export const theme = {
 	colors: {
 		background: '#22212C',
-		text: 'white'
+		text: 'white',
+		bgCard: '#302F3D'
 	},
 }
 
