@@ -1,5 +1,5 @@
 import { ThemeProvider } from 'styled-components'
-import { Card } from './components/Card'
+import { BalanceSection } from './components/BalanceSection'
 import { GlobalStyles } from './GlobalStyles'
 import { theme } from './themes'
 
@@ -8,9 +8,7 @@ function App() {
 		<ThemeProvider theme={theme}>
 			<GlobalStyles />
 			<div className="app">
-				<Card>
-          Card
-				</Card>
+				<BalanceSection />
 			</div>
 		</ThemeProvider>
 	)
