@@ -5,3 +5,7 @@ export const theme = {
 		background: '#232528',
 	},
 }
+
+declare module 'styled-components' {
+  export type themeType = typeof theme
+}
