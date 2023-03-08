@@ -15,8 +15,8 @@ export const GlobalStyles = createGlobalStyle`
 
   body {
     font-size: 1.6rem;
-    background-color: ${props => props.theme.colors.background};
-    color: ${props => props.theme.colors.text};	
+    background-color: ${(props) => props.theme.colors.background};
+    color: ${(props) => props.theme.colors.text};	
   }
 
   .app {
