@@ -1,15 +1,26 @@
-import { Card } from '../Card'
-import { Container, Title } from './styled'
+import {
+	Container,
+	InfoCard,
+	Title,
+	ValueInfo,
+	ValueInfoWrapper,
+} from './styled'
 
 export function BalanceSection() {
 	return (
 		<Container>
-			<Card>
+			<InfoCard>
+				<Title>Emprestado</Title>
+				<ValueInfoWrapper>
+					<ValueInfo>R$ 200,00</ValueInfo>
+				</ValueInfoWrapper>
+			</InfoCard>
+			<InfoCard>
 				<Title>Devendo</Title>
-			</Card>
-			<Card>
-				<Title>A receber</Title>
-			</Card>
+				<ValueInfoWrapper>
+					<ValueInfo>R$ 200,00</ValueInfo>
+				</ValueInfoWrapper>
+			</InfoCard>
 		</Container>
 	)
 }
