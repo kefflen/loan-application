@@ -1,4 +1,4 @@
-import styled, { DefaultTheme, themeType } from 'styled-components'
+import styled, { themeType } from 'styled-components'
 import { Card } from '../Card'
 
 export const Container = styled.section`
@@ -7,13 +7,13 @@ export const Container = styled.section`
 `
 
 export const InfoCard = styled(Card)`
-  display: flex;
-  flex-direction: column;
-  gap: 1.8rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1.8rem;
 `
 export const ValueInfo = styled.span`
-  font-weight: semibold;
-  font-size: 2.4rem;
+	font-weight: semibold;
+	font-size: 2.4rem;
 `
 export const ValueInfoWrapper = styled.div`
 	display: flex;

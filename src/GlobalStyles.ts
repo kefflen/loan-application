@@ -16,15 +16,18 @@ export const GlobalStyles = createGlobalStyle`
   body {
     font-size: 1.6rem;
     background-color: ${(props) => props.theme.colors.background};
-    color: ${(props) => props.theme.colors.text};	
+    color: ${(props) => props.theme.colors.text};
+		overflow-x: hidden;
   }
 
   .app {
     min-height: 100vh;
-    min-width: 100vw;
+    width: 100vw;
+		padding: 1.6rem;
     display: flex;
-    justify-content: center;
     align-items: center;
+    flex-direction: column;
+    gap: 1.8rem;
   }
 
 `
