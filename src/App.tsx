@@ -1,17 +1,28 @@
+import { useEffect, useState } from 'react'
 import { ThemeProvider } from 'styled-components'
+import { getTransactions } from './api/TransactionApi'
 import { BalanceSection } from './components/BalanceSection'
 import { TransactionList } from './components/TransactionList'
 import { GlobalStyles } from './GlobalStyles'
-import { TransactionMock } from './mocks'
 import { theme } from './themes'
+import { Transaction } from './types/Transaction'
 
 function App() {
+	const [transactions, setTransactions] = useState<Transaction[]>([])
+
+	useEffect(() => {
+		(async () => {
+			const transactionsData = await getTransactions()
+			setTransactions(transactionsData)
+		})()
+	}, [])
+
 	return (
 		<ThemeProvider theme={theme}>
 			<GlobalStyles />
 			<div className="app">
 				<BalanceSection />
-				<TransactionList transactions={TransactionMock} />
+				<TransactionList transactions={transactions} />
 			</div>
 		</ThemeProvider>
 	)
