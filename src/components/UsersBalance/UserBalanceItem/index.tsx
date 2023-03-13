@@ -1,4 +1,5 @@
 import { OtherUser } from '../../../types/User'
+import { formatMoney } from '../../../utils'
 import { Container, UserName, NegativeValue, Info } from './styled'
 
 type props = {
@@ -14,12 +15,12 @@ export function UserBalanceItem({ user }: props) {
 			{owingMe ? (
 				<Info>
 					<span>Me deve:</span>
-					<span>{balance}</span>
+					<span>{formatMoney(balance)}</span>
 				</Info>
 			) : (
 				<Info>
 					<span>Eu devo:</span>
-					<NegativeValue>{Math.abs(balance)}</NegativeValue>
+					<NegativeValue>{formatMoney(Math.abs(balance))}</NegativeValue>
 				</Info>
 			)}
 		</Container>

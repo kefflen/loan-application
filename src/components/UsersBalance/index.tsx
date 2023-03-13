@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { getDebts } from '../../api/UserApi'
 import { OtherUser } from '../../types/User'
+import { formatMoney } from '../../utils'
 import { Container, Divider, TotalInfos, UserDebts } from './styled'
 import { UserBalanceItem } from './UserBalanceItem'
 
@@ -42,10 +43,10 @@ export function UsersBalance() {
 			<Divider />
 			<TotalInfos>
 				<div>
-					<span>Me devem: {owingMe}</span>
+					<span>Me devem: {formatMoney(owingMe)}</span>
 				</div>
 				<div>
-					<span>Eu devo: {Math.abs(borrowed)}</span>
+					<span>Eu devo: {formatMoney(Math.abs(borrowed))}</span>
 				</div>
 			</TotalInfos>
 		</Container>
