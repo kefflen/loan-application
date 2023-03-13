@@ -6,7 +6,7 @@ export const theme = {
 		text: 'white',
 		bgCard: '#302F3D',
 		// green: '#9bff68',
-		// red: '#ff6868',
+		negativeValue: '#ff6868',
 	},
 }
 
