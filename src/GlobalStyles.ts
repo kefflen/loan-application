@@ -17,12 +17,13 @@ export const GlobalStyles = createGlobalStyle`
     font-size: 1.6rem;
     background-color: ${(props) => props.theme.colors.background};
     color: ${(props) => props.theme.colors.text};
-		overflow-x: hidden;
+		/* overflow-x: hidden; */
   }
 
   .app {
     min-height: 100vh;
-    width: 100vw;
+    width: 100vw; // Other possible solution would be to use initial window size
+		max-width: 100%;
 		padding: 1.6rem;
     display: flex;
     align-items: center;
