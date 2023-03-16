@@ -1,6 +1,14 @@
+import { faMoneyBillTransfer } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { OtherUser } from '../../../types/User'
 import { formatMoney } from '../../../utils'
-import { Container, UserName, NegativeValue, Info } from './styled'
+import {
+	Container,
+	UserName,
+	NegativeValue,
+	Info,
+	MakeTransactionButton,
+} from './styled'
 
 type props = {
 	user: OtherUser
@@ -11,6 +19,9 @@ export function UserBalanceItem({ user }: props) {
 
 	return (
 		<Container>
+			<MakeTransactionButton>
+				<FontAwesomeIcon icon={faMoneyBillTransfer} />
+			</MakeTransactionButton>
 			<UserName>{name}</UserName>
 			{owingMe ? (
 				<Info>
