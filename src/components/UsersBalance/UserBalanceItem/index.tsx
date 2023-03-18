@@ -12,14 +12,17 @@ import {
 
 type props = {
 	user: OtherUser
+	openCreateTransactionModal: (userId: string) => void
 }
-export function UserBalanceItem({ user }: props) {
-	const { name, balance } = user
+export function UserBalanceItem({ user, openCreateTransactionModal }: props) {
+	const { name, balance, id } = user
 	const owingMe = balance > 0
 
 	return (
 		<Container>
-			<MakeTransactionButton>
+			<MakeTransactionButton
+				onClick={() => openCreateTransactionModal(id)}
+			>
 				<FontAwesomeIcon icon={faMoneyBillTransfer} />
 			</MakeTransactionButton>
 			<UserName>{name}</UserName>

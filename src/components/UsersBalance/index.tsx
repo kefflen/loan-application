@@ -5,9 +5,15 @@ import { formatMoney } from '../../utils'
 import { Container, Divider, TotalInfos, UserDebts } from './styled'
 import { UserBalanceItem } from './UserBalanceItem'
 
-export function UsersBalance() {
+type props = {
+	openCreateTransactionModal: (userId: string) => void
+}
+export function UsersBalance({ openCreateTransactionModal }: props) {
 	const [debtsUsers, setDebtsUsers] = useState<OtherUser[]>([])
-	const [totalBalances, setTotalBalances] = useState({ owingMe: 0, borrowed: 0 })
+	const [totalBalances, setTotalBalances] = useState({
+		owingMe: 0,
+		borrowed: 0,
+	})
 	const { borrowed, owingMe } = totalBalances
 
 	useEffect(() => {
@@ -37,7 +43,11 @@ export function UsersBalance() {
 		<Container>
 			<UserDebts>
 				{debtsUsers.map((user) => (
-					<UserBalanceItem user={user} key={user.id} />
+					<UserBalanceItem
+						user={user}
+						key={user.id}
+						openCreateTransactionModal={openCreateTransactionModal}
+					/>
 				))}
 			</UserDebts>
 			<Divider />

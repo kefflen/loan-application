@@ -12,6 +12,7 @@ import { Transaction } from './types/Transaction'
 function App() {
 	const [transactions, setTransactions] = useState<Transaction[]>([])
 	const [transactionDialogOpen, setTransactionDialogOpen] = useState(true)
+	const [selectedTransactionUserId, setSelectedTransactionUserId] = useState('')
 
 	useEffect(() => {
 		(async () => {
@@ -20,14 +21,25 @@ function App() {
 		})()
 	}, [])
 
+	const handleCreateTransactionModal = (userId: string) => {
+		setTransactionDialogOpen(true)
+		setSelectedTransactionUserId(userId)
+	}
+
 	return (
 		<ThemeProvider theme={theme}>
 			<GlobalStyles />
 			<div className="app">
 				<BalanceSection />
-				<UsersBalance />
+				<UsersBalance
+					openCreateTransactionModal={handleCreateTransactionModal}
+				/>
 				<TransactionList transactions={transactions} />
-				<TransactionDialogForm open={transactionDialogOpen} onClose={() => setTransactionDialogOpen(false)}/>
+				<TransactionDialogForm
+					selectedUserId={selectedTransactionUserId}
+					open={transactionDialogOpen}
+					onClose={() => setTransactionDialogOpen(false)}
+				/>
 			</div>
 		</ThemeProvider>
 	)

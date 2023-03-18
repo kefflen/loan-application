@@ -1,12 +1,13 @@
 import { Dialog } from '@mui/material'
-import { useTheme } from 'styled-components'
 import { Container } from './styled'
 
 type props = {
 	open: boolean
 	onClose: () => void
+	selectedUserId: string
 }
-export function TransactionDialogForm({ open, onClose }: props) {
+
+export function TransactionDialogForm({ open, onClose, selectedUserId }: props) {
 	return (
 		<Dialog
 			open={open}
@@ -18,7 +19,7 @@ export function TransactionDialogForm({ open, onClose }: props) {
 			}}
 		>
 			<Container>
-				Modal
+				Modal: {selectedUserId}
 			</Container>
 		</Dialog>
 	)
