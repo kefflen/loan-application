@@ -1,7 +1,10 @@
+import { faCalendarDays } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useEffect, useState } from 'react'
 import { ThemeProvider } from 'styled-components'
 import { getTransactions } from './api/TransactionApi'
 import { BalanceSection } from './components/BalanceSection'
+import { InputField } from './components/InputField'
 import { TransactionDialogForm } from './components/TransactionDialogForm'
 import { TransactionList } from './components/TransactionList'
 import { UsersBalance } from './components/UsersBalance'
@@ -11,7 +14,7 @@ import { Transaction } from './types/Transaction'
 
 function App() {
 	const [transactions, setTransactions] = useState<Transaction[]>([])
-	const [transactionDialogOpen, setTransactionDialogOpen] = useState(true)
+	const [transactionDialogOpen, setTransactionDialogOpen] = useState(false)
 	const [selectedTransactionUserId, setSelectedTransactionUserId] = useState('')
 
 	useEffect(() => {
